@@ -1,0 +1,63 @@
+{
+  "name": "across-bridge-v3-sdk",
+  "version": "1.0.0",
+  "description": "Light-weighted SDK for interacting with Across V3 API",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "dist/cli.js",
+    "dist/client.js",
+    "dist/index.js",
+    "dist/http.js",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "prepare": "npm run build",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write .",
+    "postinstall": "chmod +x dist/index.js & chmod +x dist/cli.js"
+  },
+  "keywords": [
+    "across",
+    "bridge",
+    "defi",
+    "ethereum",
+    "sdk"
+  ],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neklyud/across-v3-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neklyud/across-v3-sdk/issues"
+  },
+  "homepage": "https://github.com/neklyud/across-v3-sdk#readme",
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/node-fetch": "^2.6.11",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "prettier": "^3.5.3",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.8.3"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.6.12",
+    "commander": "^13.1.0",
+    "node-fetch": "^2.7.0"
+  },
+  "bin": {
+    "across-v3-cli": "./dist/cli.js"
+  }
+}
